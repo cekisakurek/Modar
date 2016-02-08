@@ -9,8 +9,21 @@
 #import "RadarViewController.h"
 #import "BLEDiscoveryViewController.h"
 #import "MDLocationManager.h"
+#import "MDAngleView.h"
+
 
 @implementation RadarViewController
+
+
+- (void)loadView
+{
+    [super loadView];
+    
+    MDAngleView *angleView = [[MDAngleView alloc] initWithFrame:CGRectMake(50, 150, 300, 150)];
+    [angleView setAngle:20];
+    [self.view addSubview:angleView];
+    
+}
 
 
 - (void)viewDidLoad

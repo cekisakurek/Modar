@@ -17,6 +17,7 @@
 		CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D31C68E9B800641D10 /* RadarViewController.m */; };
 		CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */; };
 		CF6861DA1C68ECB700641D10 /* MDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D91C68ECB700641D10 /* MDMotionManager.m */; };
+		CF6861DE1C68F32800641D10 /* MDAngleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861DD1C68F32800641D10 /* MDAngleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLEDiscoveryViewController.m; path = ViewControllers/BLEDiscoveryViewController.m; sourceTree = "<group>"; };
 		CF6861D81C68ECB700641D10 /* MDMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDMotionManager.h; path = Classes/MDMotionManager.h; sourceTree = "<group>"; };
 		CF6861D91C68ECB700641D10 /* MDMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDMotionManager.m; path = Classes/MDMotionManager.m; sourceTree = "<group>"; };
+		CF6861DC1C68F32800641D10 /* MDAngleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDAngleView.h; path = Views/MDAngleView.h; sourceTree = "<group>"; };
+		CF6861DD1C68F32800641D10 /* MDAngleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDAngleView.m; path = Views/MDAngleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 		CF68619D1C68CD6F00641D10 /* Modar */ = {
 			isa = PBXGroup;
 			children = (
+				CF6861DB1C68F31C00641D10 /* Views */,
 				CF6861D11C68E9A100641D10 /* ViewControllers */,
 				CF6861CA1C68CD9500641D10 /* Classes */,
 				CF6861A21C68CD6F00641D10 /* AppDelegate.h */,
@@ -150,6 +154,15 @@
 				CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CF6861DB1C68F31C00641D10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF6861DC1C68F32800641D10 /* MDAngleView.h */,
+				CF6861DD1C68F32800641D10 /* MDAngleView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +267,7 @@
 				CF6861D01C68E5ED00641D10 /* MDBLEManager.m in Sources */,
 				CF6861A41C68CD6F00641D10 /* AppDelegate.m in Sources */,
 				CF6861CD1C68E2E100641D10 /* MDLocationManager.m in Sources */,
+				CF6861DE1C68F32800641D10 /* MDAngleView.m in Sources */,
 				CF6861A11C68CD6F00641D10 /* main.m in Sources */,
 				CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */,
 				CF6861DA1C68ECB700641D10 /* MDMotionManager.m in Sources */,
