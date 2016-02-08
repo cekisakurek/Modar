@@ -8,6 +8,8 @@
 
 #import "RadarViewController.h"
 #import "BLEDiscoveryViewController.h"
+#import "MDLocationManager.h"
+
 @implementation RadarViewController
 
 

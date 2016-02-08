@@ -16,6 +16,7 @@
 		CF6861D01C68E5ED00641D10 /* MDBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861CF1C68E5ED00641D10 /* MDBLEManager.m */; };
 		CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D31C68E9B800641D10 /* RadarViewController.m */; };
 		CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */; };
+		CF6861DA1C68ECB700641D10 /* MDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D91C68ECB700641D10 /* MDMotionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		CF6861D31C68E9B800641D10 /* RadarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarViewController.m; path = ViewControllers/RadarViewController.m; sourceTree = "<group>"; };
 		CF6861D51C68E9CD00641D10 /* BLEDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLEDiscoveryViewController.h; path = ViewControllers/BLEDiscoveryViewController.h; sourceTree = "<group>"; };
 		CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLEDiscoveryViewController.m; path = ViewControllers/BLEDiscoveryViewController.m; sourceTree = "<group>"; };
+		CF6861D81C68ECB700641D10 /* MDMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDMotionManager.h; path = Classes/MDMotionManager.h; sourceTree = "<group>"; };
+		CF6861D91C68ECB700641D10 /* MDMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDMotionManager.m; path = Classes/MDMotionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				CF6861CC1C68E2E100641D10 /* MDLocationManager.m */,
 				CF6861CE1C68E5ED00641D10 /* MDBLEManager.h */,
 				CF6861CF1C68E5ED00641D10 /* MDBLEManager.m */,
+				CF6861D81C68ECB700641D10 /* MDMotionManager.h */,
+				CF6861D91C68ECB700641D10 /* MDMotionManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				CF6861CD1C68E2E100641D10 /* MDLocationManager.m in Sources */,
 				CF6861A11C68CD6F00641D10 /* main.m in Sources */,
 				CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */,
+				CF6861DA1C68ECB700641D10 /* MDMotionManager.m in Sources */,
 				CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
