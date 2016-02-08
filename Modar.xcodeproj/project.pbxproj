@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		CF6861A11C68CD6F00641D10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861A01C68CD6F00641D10 /* main.m */; };
 		CF6861A41C68CD6F00641D10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861A31C68CD6F00641D10 /* AppDelegate.m */; };
-		CF6861A71C68CD6F00641D10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861A61C68CD6F00641D10 /* ViewController.m */; };
-		CF6861AA1C68CD6F00641D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6861A81C68CD6F00641D10 /* Main.storyboard */; };
 		CF6861AC1C68CD6F00641D10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF6861AB1C68CD6F00641D10 /* Images.xcassets */; };
 		CF6861AF1C68CD6F00641D10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6861AD1C68CD6F00641D10 /* LaunchScreen.xib */; };
 		CF6861BB1C68CD6F00641D10 /* ModarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861BA1C68CD6F00641D10 /* ModarTests.m */; };
+		CF6861CD1C68E2E100641D10 /* MDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861CC1C68E2E100641D10 /* MDLocationManager.m */; };
+		CF6861D01C68E5ED00641D10 /* MDBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861CF1C68E5ED00641D10 /* MDBLEManager.m */; };
+		CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D31C68E9B800641D10 /* RadarViewController.m */; };
+		CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,19 @@
 		CF6861A01C68CD6F00641D10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF6861A21C68CD6F00641D10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF6861A31C68CD6F00641D10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CF6861A51C68CD6F00641D10 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CF6861A61C68CD6F00641D10 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CF6861A91C68CD6F00641D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF6861AB1C68CD6F00641D10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF6861AE1C68CD6F00641D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CF6861B41C68CD6F00641D10 /* ModarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6861B91C68CD6F00641D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF6861BA1C68CD6F00641D10 /* ModarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModarTests.m; sourceTree = "<group>"; };
+		CF6861CB1C68E2E100641D10 /* MDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDLocationManager.h; path = Classes/MDLocationManager.h; sourceTree = "<group>"; };
+		CF6861CC1C68E2E100641D10 /* MDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDLocationManager.m; path = Classes/MDLocationManager.m; sourceTree = "<group>"; };
+		CF6861CE1C68E5ED00641D10 /* MDBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDBLEManager.h; path = Classes/MDBLEManager.h; sourceTree = "<group>"; };
+		CF6861CF1C68E5ED00641D10 /* MDBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDBLEManager.m; path = Classes/MDBLEManager.m; sourceTree = "<group>"; };
+		CF6861D21C68E9B800641D10 /* RadarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadarViewController.h; path = ViewControllers/RadarViewController.h; sourceTree = "<group>"; };
+		CF6861D31C68E9B800641D10 /* RadarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarViewController.m; path = ViewControllers/RadarViewController.m; sourceTree = "<group>"; };
+		CF6861D51C68E9CD00641D10 /* BLEDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLEDiscoveryViewController.h; path = ViewControllers/BLEDiscoveryViewController.h; sourceTree = "<group>"; };
+		CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLEDiscoveryViewController.m; path = ViewControllers/BLEDiscoveryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +88,10 @@
 		CF68619D1C68CD6F00641D10 /* Modar */ = {
 			isa = PBXGroup;
 			children = (
+				CF6861D11C68E9A100641D10 /* ViewControllers */,
+				CF6861CA1C68CD9500641D10 /* Classes */,
 				CF6861A21C68CD6F00641D10 /* AppDelegate.h */,
 				CF6861A31C68CD6F00641D10 /* AppDelegate.m */,
-				CF6861A51C68CD6F00641D10 /* ViewController.h */,
-				CF6861A61C68CD6F00641D10 /* ViewController.m */,
-				CF6861A81C68CD6F00641D10 /* Main.storyboard */,
 				CF6861AB1C68CD6F00641D10 /* Images.xcassets */,
 				CF6861AD1C68CD6F00641D10 /* LaunchScreen.xib */,
 				CF68619E1C68CD6F00641D10 /* Supporting Files */,
@@ -117,6 +123,28 @@
 				CF6861B91C68CD6F00641D10 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF6861CA1C68CD9500641D10 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CF6861CB1C68E2E100641D10 /* MDLocationManager.h */,
+				CF6861CC1C68E2E100641D10 /* MDLocationManager.m */,
+				CF6861CE1C68E5ED00641D10 /* MDBLEManager.h */,
+				CF6861CF1C68E5ED00641D10 /* MDBLEManager.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		CF6861D11C68E9A100641D10 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF6861D21C68E9B800641D10 /* RadarViewController.h */,
+				CF6861D31C68E9B800641D10 /* RadarViewController.m */,
+				CF6861D51C68E9CD00641D10 /* BLEDiscoveryViewController.h */,
+				CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6861AA1C68CD6F00641D10 /* Main.storyboard in Resources */,
 				CF6861AF1C68CD6F00641D10 /* LaunchScreen.xib in Resources */,
 				CF6861AC1C68CD6F00641D10 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +246,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF6861A71C68CD6F00641D10 /* ViewController.m in Sources */,
+				CF6861D01C68E5ED00641D10 /* MDBLEManager.m in Sources */,
 				CF6861A41C68CD6F00641D10 /* AppDelegate.m in Sources */,
+				CF6861CD1C68E2E100641D10 /* MDLocationManager.m in Sources */,
 				CF6861A11C68CD6F00641D10 /* main.m in Sources */,
+				CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */,
+				CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +274,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CF6861A81C68CD6F00641D10 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF6861A91C68CD6F00641D10 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CF6861AD1C68CD6F00641D10 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,6 +438,7 @@
 				CF6861C01C68CD6F00641D10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF6861C11C68CD6F00641D10 /* Build configuration list for PBXNativeTarget "ModarTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +447,7 @@
 				CF6861C31C68CD7000641D10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
