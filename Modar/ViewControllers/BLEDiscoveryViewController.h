@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface BLEDiscoveryViewController : UIViewController
+@interface BLEDiscoveryViewController : UITableViewController
 
 @end

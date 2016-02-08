@@ -8,7 +8,7 @@
 
 #import "MDBLEManager.h"
 
-#define RWT_BLE_SERVICE_UUID		[CBUUID UUIDWithString:@"B8E06067-62AD-41BA-9231-206AE80AB550"]
+#define RWT_BLE_SERVICE_UUID		[CBUUID UUIDWithString:@"6E400001-B5A3-F393-E0A9-E50E24DCCA9E"]
 #define RWT_POSITION_CHAR_UUID		[CBUUID UUIDWithString:@"BF45E40A-DE2A-4BC8-BBA0-E5D6065F1B4B"]
 
 
@@ -18,7 +18,7 @@
 @property (strong, nonatomic) CBCharacteristic *characteristic;
 
 + (instancetype)sensorWithPeripheral:(CBPeripheral *)peripheral;
-
+- (void)startDiscoveringServices;
 @end
 
 
@@ -52,9 +52,14 @@
     return self;
 }
 
+- (void)connectToSensor:(MDBLELidarSensor *)sensor
+{
+    [self.centralManager connectPeripheral:sensor.peripheral options:nil];
+}
+
 - (void)startScanning
 {
-    [self.centralManager scanForPeripheralsWithServices:@[RWT_BLE_SERVICE_UUID] options:nil];
+    [self.centralManager scanForPeripheralsWithServices:nil options:nil];
 }
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
@@ -62,14 +67,22 @@
     MDBLELidarSensor *sensor = [MDBLELidarSensor sensorWithPeripheral:peripheral];
     [self.peripherals addObject:sensor];
     
+    
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
+    NSLog(@"connected:%@",peripheral);
+    for (MDBLELidarSensor *sensor in self.peripherals) {
+        if ([sensor.peripheral isEqual:peripheral]) {
+            [sensor startDiscoveringServices];
+        }
+    }
+    
     
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
-    
+    NSLog(@"disconnected:%@",peripheral);
 }
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
@@ -96,7 +109,7 @@
             
         case CBCentralManagerStatePoweredOn:
         {
-//            [self startScanning];
+            [self startScanning];
             
             break;
         }
@@ -124,6 +137,12 @@
 
 @implementation MDBLELidarSensor
 
+
+- (NSString *)name
+{
+    return self.peripheral.name;
+}
+
 + (instancetype)sensorWithPeripheral:(CBPeripheral *)peripheral
 {
     MDBLELidarSensor *sensor = [[MDBLELidarSensor alloc] init];
@@ -134,7 +153,7 @@
 
 - (void)startDiscoveringServices
 {
-    [self.peripheral discoverServices:@[RWT_BLE_SERVICE_UUID]];
+    [self.peripheral discoverServices:nil];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
@@ -158,9 +177,8 @@
     }
     
     for (CBService *service in services) {
-        if ([[service UUID] isEqual:RWT_BLE_SERVICE_UUID]) {
-            [peripheral discoverCharacteristics:uuidsForBTService forService:service];
-        }
+        [peripheral discoverCharacteristics:uuidsForBTService forService:service];
+
     }
 }
 
@@ -178,12 +196,17 @@
     }
     
     for (CBCharacteristic *characteristic in characteristics) {
-        if ([[characteristic UUID] isEqual:RWT_POSITION_CHAR_UUID]) {
-            self.characteristic = characteristic;
-            self.connected = YES;
-        }
+//        self.characteristic = characteristic;
+//        self.connected = YES;
+        [peripheral setNotifyValue:YES forCharacteristic:characteristic];
     }
 
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error
+{
+    NSLog(@"%@ %@ %@",peripheral,characteristic,characteristic.value);
+//    [peripheral readValueForCharacteristic:characteristic];
 }
 
 @end

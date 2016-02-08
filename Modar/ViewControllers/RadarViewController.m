@@ -9,6 +9,7 @@
 #import "RadarViewController.h"
 #import "BLEDiscoveryViewController.h"
 #import "MDLocationManager.h"
+#import "MDBLEManager.h"
 #import "MDAngleView.h"
 
 
@@ -23,12 +24,16 @@
     [angleView setAngle:20];
     [self.view addSubview:angleView];
     
+    
 }
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [MDBLEManager sharedManager];
+    
     
     UIBarButtonItem *discoveryItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(presentDiscoveryViewController:)];
     

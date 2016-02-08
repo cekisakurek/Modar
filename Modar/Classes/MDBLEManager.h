@@ -9,9 +9,16 @@
 #import <Foundation/Foundation.h>
 @import CoreBluetooth;
 
+@class MDBLELidarSensor;
+
 @interface MDBLEManager : NSObject
 
 @property (strong) NSMutableSet *peripherals;
+
++ (instancetype)sharedManager;
+- (void)startScanning;
+
+- (void)connectToSensor:(MDBLELidarSensor *)sensor;
 
 @end
 
@@ -21,5 +28,7 @@
 @property (assign,getter=isConnected) BOOL connected;
 
 @property (assign) double distance;
+
+- (NSString *)name;
 
 @end
