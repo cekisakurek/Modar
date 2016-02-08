@@ -42,9 +42,6 @@
         angleView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         angleView.backgroundColor = [UIColor blackColor];
         [self addSubview:angleView];
-//
-//        
-        
     }
     return self;
 }

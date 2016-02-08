@@ -14,4 +14,10 @@
 @property (assign) double speed; // in kilometer per hour
 @property (strong) CLLocation *location;
 
+
+@property (assign) double friction;
+
+
+- (float)stoppingDistance;
+
 @end

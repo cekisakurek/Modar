@@ -6,6 +6,11 @@
 //  Copyright (c) 2016 cekisakurek. All rights reserved.
 //
 
+#define GRAVITY 9.80
+
+#define DRY_FRICTION 0.70
+#define WET_FRICTION 0.40
+
 #import "MDLocationManager.h"
 
 @interface MDLocationManager () <CLLocationManagerDelegate>
@@ -35,9 +40,19 @@
         self.manager.delegate = self;
         self.manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
 
+        self.friction = DRY_FRICTION;
+        
     }
     return self;
 }
+
+
+- (float)stoppingDistance
+{
+    float distance = pow(self.location.speed, 2)/ (2 * GRAVITY * self.friction);
+    return distance;
+}
+
 
 - (void)startUpdatingLocation
 {
