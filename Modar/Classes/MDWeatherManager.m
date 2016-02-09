@@ -8,6 +8,8 @@
 
 #import "MDWeatherManager.h"
 
+#define API_KEY @"2278d6fa561df6f1133dcbb5a4bfd72a"
+
 @implementation MDWeatherManager
 
 + (instancetype)sharedManager
@@ -20,7 +22,7 @@
 
 - (void)fetchWeatherWithLatitude:(double)latitude longitude:(double)longitude
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=metric&lang=en",latitude,longitude]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=metric&lang=en&APPID=%@",latitude,longitude,API_KEY]];
     
     __weak MDWeatherManager *weakRef = self;
     

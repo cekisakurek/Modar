@@ -15,6 +15,8 @@
 #import "FBKVOController.h"
 #import "MDSpeedView.h"
 #import "MDDistanceView.h"
+#import "MDWeatherManager.h"
+#import "MDWeatherView.h"
 
 @interface RadarViewController ()
 @property (strong) FBKVOController *KVOController;
@@ -43,8 +45,12 @@
     
     MDDistanceView *distanceView = [[MDDistanceView alloc] initWithFrame:CGRectMake(0, 150, self.view.bounds.size.width, 100)];
     [self.view addSubview:distanceView];
+
+    MDWeatherView *weatherView = [[MDWeatherView alloc] initWithFrame:CGRectMake(0, 260, self.view.bounds.size.width, 100)];
+    [self.view addSubview:weatherView];
     
-    MDAngleView *angleView = [[MDAngleView alloc] initWithFrame:CGRectMake(50, 300, 300, 150)];
+    
+    MDAngleView *angleView = [[MDAngleView alloc] initWithFrame:CGRectMake(50, 370, 300, 150)];
     [self.view addSubview:angleView];
     
     [self.KVOController observe:[MDMotionManager sharedManager] keyPath:@"angle" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(RadarViewController *weakRef, MDMotionManager *motionManager, NSDictionary *change) {
@@ -59,8 +65,18 @@
     [self.KVOController observe:[MDLocationManager sharedManager] keyPath:@"stoppingDistance" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(RadarViewController *weakRef, MDLocationManager *locationManager, NSDictionary *change) {
         distanceView.distance = locationManager.stoppingDistance;
     }];
+    
+    [self.KVOController observe:[MDWeatherManager sharedManager] keyPath:@"tempetureMax" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(RadarViewController *weakRef, MDWeatherManager *weatherManager, NSDictionary *change) {
+        
+        weatherView.weather = weatherManager.tempetureMax;
+        weatherView.iconURL = weatherManager.weatherIconURL;
+
+        
+    }];
  
-    //2278d6fa561df6f1133dcbb5a4bfd72a
+    //
+    
+    [[MDWeatherManager sharedManager] fetchWeatherWithLatitude:52.509441 longitude:13.378927];
 }
 
 
