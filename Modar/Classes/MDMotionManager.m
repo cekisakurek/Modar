@@ -47,13 +47,14 @@
                                                 withHandler:^(CMDeviceMotion *motion, NSError *error) {
                                                     
                                                     // Get the attitude of the device
-                                                    CMAttitude *attitude = motion.attitude;
+                                                    //CMAttitude *attitude = motion.attitude;
                                                     
                                                     // Get the pitch (in radians) and convert to degrees.
 //                                                    NSLog(@"%f", attitude.pitch * 180.0/M_PI);
 //                                                    weakSelf.angle = attitude.pitch * 180.0/M_PI;
                                                     double rotation = atan2(motion.gravity.x, motion.gravity.y) - M_PI;
-                                                    weakSelf.angle = attitude.pitch * 180.0/M_PI;
+                                                    //weakSelf.angle = attitude.pitch * 180.0/M_PI;
+                                                    weakSelf.angle = rotation;
                                                     dispatch_async(dispatch_get_main_queue(), ^{
                                                         // Update some UI
                                                     });

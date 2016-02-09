@@ -12,6 +12,7 @@
 #define WET_FRICTION 0.40
 
 #import "MDLocationManager.h"
+#import "MDWeatherManager.h"
 
 @interface MDLocationManager () <CLLocationManagerDelegate>
 
@@ -46,11 +47,11 @@
     return self;
 }
 
-
-- (float)stoppingDistance
+- (double)stoppingDistance
 {
     float distance = pow(self.location.speed, 2)/ (2 * GRAVITY * self.friction);
     return distance;
+    
 }
 
 
@@ -68,6 +69,14 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *location = [manager location];
+    
+    CLLocationDistance distance = [location distanceFromLocation:location];
+    
+    if (distance > 10000)
+    {
+        [[MDWeatherManager sharedManager] fetchWeatherWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+    }
+    
     self.location = location;
     if (location.speed)
     {

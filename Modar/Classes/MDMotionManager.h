@@ -13,4 +13,8 @@
 
 @property (assign) double angle;
 
++ (instancetype)sharedManager;
+
+- (void)startUpdating;
+
 @end

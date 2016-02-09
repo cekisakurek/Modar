@@ -18,6 +18,11 @@
 		CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */; };
 		CF6861DA1C68ECB700641D10 /* MDMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861D91C68ECB700641D10 /* MDMotionManager.m */; };
 		CF6861DE1C68F32800641D10 /* MDAngleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861DD1C68F32800641D10 /* MDAngleView.m */; };
+		CF6861E51C69E5EF00641D10 /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861E21C69E5EF00641D10 /* FBKVOController.m */; };
+		CF6861E61C69E5EF00641D10 /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861E41C69E5EF00641D10 /* NSObject+FBKVOController.m */; };
+		CF6861E91C69E84300641D10 /* MDSpeedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861E81C69E84300641D10 /* MDSpeedView.m */; };
+		CF6861EC1C69F24D00641D10 /* MDDistanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861EB1C69F24D00641D10 /* MDDistanceView.m */; };
+		CF6861EF1C69F44F00641D10 /* MDWeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861EE1C69F44F00641D10 /* MDWeatherManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,17 @@
 		CF6861D91C68ECB700641D10 /* MDMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDMotionManager.m; path = Classes/MDMotionManager.m; sourceTree = "<group>"; };
 		CF6861DC1C68F32800641D10 /* MDAngleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDAngleView.h; path = Views/MDAngleView.h; sourceTree = "<group>"; };
 		CF6861DD1C68F32800641D10 /* MDAngleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDAngleView.m; path = Views/MDAngleView.m; sourceTree = "<group>"; };
+		CF6861E01C69E5EF00641D10 /* FBKVOController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBKVOController-Prefix.pch"; sourceTree = "<group>"; };
+		CF6861E11C69E5EF00641D10 /* FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBKVOController.h; sourceTree = "<group>"; };
+		CF6861E21C69E5EF00641D10 /* FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBKVOController.m; sourceTree = "<group>"; };
+		CF6861E31C69E5EF00641D10 /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOController.h"; sourceTree = "<group>"; };
+		CF6861E41C69E5EF00641D10 /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOController.m"; sourceTree = "<group>"; };
+		CF6861E71C69E84300641D10 /* MDSpeedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDSpeedView.h; path = Views/MDSpeedView.h; sourceTree = "<group>"; };
+		CF6861E81C69E84300641D10 /* MDSpeedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDSpeedView.m; path = Views/MDSpeedView.m; sourceTree = "<group>"; };
+		CF6861EA1C69F24D00641D10 /* MDDistanceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDDistanceView.h; path = Views/MDDistanceView.h; sourceTree = "<group>"; };
+		CF6861EB1C69F24D00641D10 /* MDDistanceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDDistanceView.m; path = Views/MDDistanceView.m; sourceTree = "<group>"; };
+		CF6861ED1C69F44F00641D10 /* MDWeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDWeatherManager.h; path = Classes/MDWeatherManager.h; sourceTree = "<group>"; };
+		CF6861EE1C69F44F00641D10 /* MDWeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDWeatherManager.m; path = Classes/MDWeatherManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,7 @@
 		CF68619D1C68CD6F00641D10 /* Modar */ = {
 			isa = PBXGroup;
 			children = (
+				CF6861DF1C69E5EF00641D10 /* FBKVOController */,
 				CF6861DB1C68F31C00641D10 /* Views */,
 				CF6861D11C68E9A100641D10 /* ViewControllers */,
 				CF6861CA1C68CD9500641D10 /* Classes */,
@@ -141,6 +158,8 @@
 				CF6861CF1C68E5ED00641D10 /* MDBLEManager.m */,
 				CF6861D81C68ECB700641D10 /* MDMotionManager.h */,
 				CF6861D91C68ECB700641D10 /* MDMotionManager.m */,
+				CF6861ED1C69F44F00641D10 /* MDWeatherManager.h */,
+				CF6861EE1C69F44F00641D10 /* MDWeatherManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -161,8 +180,24 @@
 			children = (
 				CF6861DC1C68F32800641D10 /* MDAngleView.h */,
 				CF6861DD1C68F32800641D10 /* MDAngleView.m */,
+				CF6861E71C69E84300641D10 /* MDSpeedView.h */,
+				CF6861E81C69E84300641D10 /* MDSpeedView.m */,
+				CF6861EA1C69F24D00641D10 /* MDDistanceView.h */,
+				CF6861EB1C69F24D00641D10 /* MDDistanceView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		CF6861DF1C69E5EF00641D10 /* FBKVOController */ = {
+			isa = PBXGroup;
+			children = (
+				CF6861E01C69E5EF00641D10 /* FBKVOController-Prefix.pch */,
+				CF6861E11C69E5EF00641D10 /* FBKVOController.h */,
+				CF6861E21C69E5EF00641D10 /* FBKVOController.m */,
+				CF6861E31C69E5EF00641D10 /* NSObject+FBKVOController.h */,
+				CF6861E41C69E5EF00641D10 /* NSObject+FBKVOController.m */,
+			);
+			path = FBKVOController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +303,14 @@
 				CF6861A41C68CD6F00641D10 /* AppDelegate.m in Sources */,
 				CF6861CD1C68E2E100641D10 /* MDLocationManager.m in Sources */,
 				CF6861DE1C68F32800641D10 /* MDAngleView.m in Sources */,
+				CF6861E51C69E5EF00641D10 /* FBKVOController.m in Sources */,
 				CF6861A11C68CD6F00641D10 /* main.m in Sources */,
+				CF6861EF1C69F44F00641D10 /* MDWeatherManager.m in Sources */,
+				CF6861EC1C69F24D00641D10 /* MDDistanceView.m in Sources */,
+				CF6861E61C69E5EF00641D10 /* NSObject+FBKVOController.m in Sources */,
 				CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */,
 				CF6861DA1C68ECB700641D10 /* MDMotionManager.m in Sources */,
+				CF6861E91C69E84300641D10 /* MDSpeedView.m in Sources */,
 				CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

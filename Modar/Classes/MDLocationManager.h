@@ -14,10 +14,13 @@
 @property (assign) double speed; // in kilometer per hour
 @property (strong) CLLocation *location;
 
+@property (assign,nonatomic) double stoppingDistance;
 
 @property (assign) double friction;
 
++ (instancetype)sharedManager;
 
-- (float)stoppingDistance;
+- (void)startUpdatingLocation;
+- (void)stopUpdatingLocation;
 
 @end
