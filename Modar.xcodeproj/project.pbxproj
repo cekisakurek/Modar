@@ -24,6 +24,7 @@
 		CF6861EC1C69F24D00641D10 /* MDDistanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861EB1C69F24D00641D10 /* MDDistanceView.m */; };
 		CF6861EF1C69F44F00641D10 /* MDWeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861EE1C69F44F00641D10 /* MDWeatherManager.m */; };
 		CF6861F21C69FEBF00641D10 /* MDWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6861F11C69FEBF00641D10 /* MDWeatherView.m */; };
+		CFCD0D6E1C6A0AA600119B06 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCD0D6D1C6A0AA600119B06 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		CF6861EE1C69F44F00641D10 /* MDWeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDWeatherManager.m; path = Classes/MDWeatherManager.m; sourceTree = "<group>"; };
 		CF6861F01C69FEBF00641D10 /* MDWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDWeatherView.h; path = Views/MDWeatherView.h; sourceTree = "<group>"; };
 		CF6861F11C69FEBF00641D10 /* MDWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDWeatherView.m; path = Views/MDWeatherView.m; sourceTree = "<group>"; };
+		CFCD0D6C1C6A0AA600119B06 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewControllers/SettingsViewController.h; sourceTree = "<group>"; };
+		CFCD0D6D1C6A0AA600119B06 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewControllers/SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				CF6861D31C68E9B800641D10 /* RadarViewController.m */,
 				CF6861D51C68E9CD00641D10 /* BLEDiscoveryViewController.h */,
 				CF6861D61C68E9CD00641D10 /* BLEDiscoveryViewController.m */,
+				CFCD0D6C1C6A0AA600119B06 /* SettingsViewController.h */,
+				CFCD0D6D1C6A0AA600119B06 /* SettingsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				CF6861E61C69E5EF00641D10 /* NSObject+FBKVOController.m in Sources */,
 				CF6861D41C68E9B800641D10 /* RadarViewController.m in Sources */,
 				CF6861DA1C68ECB700641D10 /* MDMotionManager.m in Sources */,
+				CFCD0D6E1C6A0AA600119B06 /* SettingsViewController.m in Sources */,
 				CF6861E91C69E84300641D10 /* MDSpeedView.m in Sources */,
 				CF6861D71C68E9CD00641D10 /* BLEDiscoveryViewController.m in Sources */,
 			);

@@ -47,7 +47,8 @@
     {
         dispatch_queue_t centralQueue = dispatch_queue_create("com.cekisakurek", DISPATCH_QUEUE_SERIAL);
         self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:centralQueue];
-        self.peripherals = [NSMutableSet set];
+        self.discoveredPeripherals = [NSMutableSet set];
+        self.connectedPeripherals = [NSMutableSet set];
     }
     return self;
 }
@@ -65,14 +66,32 @@
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
     MDBLELidarSensor *sensor = [MDBLELidarSensor sensorWithPeripheral:peripheral];
-    [self.peripherals addObject:sensor];
+    [self.discoveredPeripherals addObject:sensor];
     
+    [central retrievePeripheralsWithIdentifiers:@[peripheral.identifier.UUIDString]];
     
+}
+
+- (void)centralManager:(CBCentralManager *)central didRetrievePeripherals:(NSArray *)peripherals
+{
+    NSLog(@"Retrieved peripheral: %lu - %@", [peripherals count], peripherals);
+    
+    [central stopScan];
+    
+    /* If there are any known devices, automatically connect to it.*/
+    if([peripherals count] >=1)
+    {
+        for (CBPeripheral *peripheral in peripherals) {
+            MDBLELidarSensor *sensor = [MDBLELidarSensor sensorWithPeripheral:peripheral];
+            [self.connectedPeripherals addObject:sensor];
+            [central connectPeripheral:peripheral options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:CBConnectPeripheralOptionNotifyOnDisconnectionKey]];
+        }
+    }
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     NSLog(@"connected:%@",peripheral);
-    for (MDBLELidarSensor *sensor in self.peripherals) {
+    for (MDBLELidarSensor *sensor in self.connectedPeripherals) {
         if ([sensor.peripheral isEqual:peripheral]) {
             [sensor startDiscoveringServices];
         }
@@ -90,8 +109,7 @@
     switch (self.centralManager.state) {
         case CBCentralManagerStatePoweredOff:
         {
-//            [self clearDevices];
-            
+            [self clearDevices];
             break;
         }
             
@@ -116,7 +134,8 @@
             
         case CBCentralManagerStateResetting:
         {
-//            [self clearDevices];
+
+            [self clearDevices];
             break;
         }
             
@@ -129,6 +148,12 @@
             break;
     }
     
+}
+
+- (void)clearDevices
+{
+    [self.discoveredPeripherals removeAllObjects];
+    [self.connectedPeripherals removeAllObjects];
 }
 
 

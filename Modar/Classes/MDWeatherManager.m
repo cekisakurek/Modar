@@ -37,16 +37,18 @@
                     NSDictionary *weather = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parsingError];
                     if (!parsingError)
                     {
-                        
-                        for (NSDictionary *dict in weather[@"weather"]) {
-                            weakRef.weatherIconURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png",dict[@"icon"]]];
-                        }
-                        
-                        weakRef.tempetureMin = [weather[@"main"][@"temp_min"] doubleValue];
-                        weakRef.tempetureMax = [weather[@"main"][@"temp_max"] doubleValue];
-                        weakRef.windSpeed = [weather[@"wind"][@"speed"] doubleValue];
-                        weakRef.windDegree = [weather[@"wind"][@"deg"] doubleValue];
-                        weakRef.rainVolume = [weather[@"rain"][@"3h"] doubleValue];
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            //If self.image is atomic (not declared with nonatomic)
+                            // you could have set it directly above
+                            for (NSDictionary *dict in weather[@"weather"]) {
+                                weakRef.weatherIconURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png",dict[@"icon"]]];
+                            }
+                            weakRef.tempetureMin = [weather[@"main"][@"temp_min"] doubleValue];
+                            weakRef.tempetureMax = [weather[@"main"][@"temp_max"] doubleValue];
+                            weakRef.windSpeed = [weather[@"wind"][@"speed"] doubleValue];
+                            weakRef.windDegree = [weather[@"wind"][@"deg"] doubleValue];
+                            weakRef.rainVolume = [weather[@"rain"][@"3h"] doubleValue];
+                        });
                     }
                 }
                 

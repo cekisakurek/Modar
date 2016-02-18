@@ -87,15 +87,16 @@
     [MDBLEManager sharedManager];
     [[MDMotionManager sharedManager] startUpdating];
     
+    UIBarButtonItem *settingsItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) style:UIBarButtonItemStylePlain target:self action:@selector(presentSettingsViewController:)];
     
-    UIBarButtonItem *discoveryItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(presentDiscoveryViewController:)];
-    
-    self.navigationItem.rightBarButtonItem = discoveryItem;
+    self.navigationItem.rightBarButtonItem = settingsItem;
     
 }
 
 
-- (void)presentDiscoveryViewController:(id)sender
+
+
+- (void)presentSettingsViewController:(id)sender
 {
     BLEDiscoveryViewController *viewController = [[BLEDiscoveryViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];

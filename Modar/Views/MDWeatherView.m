@@ -40,7 +40,10 @@
 - (void)setWeather:(double)weather
 {
     _weather = weather;
-    self.weatherLabel.text = [NSString stringWithFormat:@"%@ : %.1f",NSLocalizedString(@"Temp", nil),_weather];
+    int w = ceil(_weather);
+    NSLog(@"w:%d",w);
+    self.weatherLabel.text = [NSString stringWithFormat:@"%@ : %d",NSLocalizedString(@"Temp", nil),w];
+    [self setNeedsDisplay];
 }
 
 - (void)setIconURL:(NSURL *)iconURL

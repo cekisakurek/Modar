@@ -13,7 +13,8 @@
 
 @interface MDBLEManager : NSObject
 
-@property (strong) NSMutableSet *peripherals;
+@property (strong) NSMutableSet *discoveredPeripherals;
+@property (strong) NSMutableSet *connectedPeripherals;
 
 + (instancetype)sharedManager;
 - (void)startScanning;
