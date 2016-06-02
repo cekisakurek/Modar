@@ -55,8 +55,14 @@
                                                     double rotation = atan2(motion.gravity.x, motion.gravity.y) - M_PI;
                                                     //weakSelf.angle = attitude.pitch * 180.0/M_PI;
                                                     weakSelf.angle = rotation;
+
+                                                    float angle = atan2(motion.gravity.y, motion.gravity.x) + M_PI_2;           // in radians
+                                                    float angleDegrees = angle * 180.0f / M_PI;   // in degrees
+
+
                                                     dispatch_async(dispatch_get_main_queue(), ^{
                                                         // Update some UI
+                                                        weakSelf.angle = angleDegrees;
                                                     });
                                                     
                                                 }];

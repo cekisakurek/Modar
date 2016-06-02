@@ -32,7 +32,7 @@
         self.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.2];
         
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height, self.bounds.size.width, 2)];
-        bottomView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//        bottomView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         bottomView.backgroundColor = [UIColor redColor];
         [self addSubview:bottomView];
         
@@ -49,7 +49,15 @@
 - (void)setAngle:(double)angle
 {
     _angle = angle;
+    NSLog(@"%f",_angle);
+
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.1];
     self.angleView.transform = CGAffineTransformMakeRotation(degreesToRadians(_angle));
+    [UIView commitAnimations];
+
+    [self.angleView setNeedsDisplay];
     [self setNeedsDisplay];
     
 }

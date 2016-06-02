@@ -33,7 +33,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[MDBLEManager sharedManager] peripherals] count];
+    return [[[MDBLEManager sharedManager] discoveredPeripherals] count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -45,7 +45,7 @@
     
     
     
-    MDBLELidarSensor *sensor = [[[MDBLEManager sharedManager]peripherals] allObjects][indexPath.row];
+    MDBLELidarSensor *sensor = [[[MDBLEManager sharedManager]discoveredPeripherals] allObjects][indexPath.row];
     cell.textLabel.text = sensor.name;
     
     return cell;
@@ -53,7 +53,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MDBLELidarSensor *sensor = [[[MDBLEManager sharedManager]peripherals] allObjects][indexPath.row];
+    MDBLELidarSensor *sensor = [[[MDBLEManager sharedManager]discoveredPeripherals] allObjects][indexPath.row];
     [[MDBLEManager sharedManager] connectToSensor:sensor];
 }
 
