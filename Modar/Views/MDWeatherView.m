@@ -41,7 +41,6 @@
 {
     _weather = weather;
     int w = ceil(_weather);
-    NSLog(@"w:%d",w);
     self.weatherLabel.text = [NSString stringWithFormat:@"%@ : %d",NSLocalizedString(@"Temp", nil),w];
     [self setNeedsDisplay];
 }

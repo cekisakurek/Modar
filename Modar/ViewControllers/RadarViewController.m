@@ -24,6 +24,10 @@
 
 @implementation RadarViewController
 
+- (void)dealloc
+{
+    [self.KVOController unobserveAll];
+}
 
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
